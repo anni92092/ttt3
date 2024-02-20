@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+
+    <style>
+        .content {
+            max-width: 500px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .square {
+            height: 100px;
+            width: 100px;
+            border: black 1px solid;
+            margin: 15px;
+            display: inline-block;
+            overflow: hidden;
+            line-height: 100px;
+        }
+
+        .square:hover {
+            background-color: dodgerblue;
+            color: white;
+        }
+
+        .turn,
+        .win {
+            border: black 1px solid;
+        }
+
+        span {
+            font-size: 2em;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="content">
+        <h1>Tic Tac Toe</h1>
+        <hr>
+
+        <script>
+            const NUM_SQUARES = 9;
+
+            for (i = 0; i < NUM_SQUARES; i++) {
+                id = "sq" + i;
+                document.write("<div class='square' id='" + id + "'></div>");
+
+                document.getElementById(id).addEventListener("click", function () {
+                    const squareId = this.id
+                    const numberOfSquare = squareId.split('sq')[1]
+                    this.innerHTML = "<span>X</span>"
+
+                    alert(numberOfSquare)
+                })
+            }
+        </script>
+
+        <hr>
+
+        <div class="turn">
+            <span>
+                X's Turn
+            </span>
+        </div>
+
+        <hr>
+
+        <div class="win">
+            <span>
+                X Win
+            </span>
+        </div>
+
+    </div>
+</body>
+
+</html>
